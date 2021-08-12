@@ -12,8 +12,8 @@ html/redaxo/cache/*
 !html/redaxo/cache/.*
 
 # redaxo media files (except in subfolders)
-#html/media/*
-#!html/media/.*
+html/media/*
+!html/media/.*
 
 # log folder and log files
 /redaxo/data/log/*
