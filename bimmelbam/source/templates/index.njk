@@ -1,0 +1,10 @@
+{# settings #}
+{% set pageTitle = "REDAXO mit Bimmelbam" %}
+
+{# extend main layout #}
+{% extends "source/templates/layouts/main.njk" %}
+
+{# inject content #}
+{% block content %}
+{% include "source/templates/components/carousel.njk" %}
+{% endblock %}

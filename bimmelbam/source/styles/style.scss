@@ -1,0 +1,14 @@
+// fonts first
+@import url("https://fonts.googleapis.com/css?family=Roboto+Condensed");
+
+// config (first, may include vendor config)
+@import "./_config/bootstrap";
+
+// vendor
+@import "../../node_modules/bootstrap/scss/bootstrap";
+
+// components
+@import "./components/carousel";
+@import "./components/footer";
+@import "./components/header";
+@import "./components/icon";

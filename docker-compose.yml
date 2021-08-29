@@ -26,11 +26,11 @@ services:
     depends_on:
       - db
     environment:
-      REDAXO_SERVER: http://localhost:20080
-      REDAXO_SERVERNAME: REDAXO
-      REDAXO_ERROR_EMAIL: mail@you.example
-      REDAXO_LANG: de_de
-      REDAXO_TIMEZONE: Europe/London
+      REDAXO_SERVER: ${REDAXO_SERVER}
+      REDAXO_SERVERNAME: ${REDAXO_SERVERNAME}
+      REDAXO_ERROR_EMAIL: ${REDAXO_ERROR_EMAIL}
+      REDAXO_LANG: ${REDAXO_LANG}
+      REDAXO_TIMEZONE: ${REDAXO_TIMEZONE}
       REDAXO_DB_HOST: ${COMPOSE_PROJECT_NAME}-db
       REDAXO_DB_NAME: ${DB_NAME}
       REDAXO_DB_LOGIN: ${DB_LOGIN}
@@ -54,6 +54,16 @@ services:
       MYSQL_USER: "${DB_LOGIN}"
       MYSQL_PASSWORD: "${DB_PASSWORD}"
       MYSQL_RANDOM_ROOT_PASSWORD: "yes"
+    networks:
+      - web
+
+  scss:
+    build: ./docker/bimmelbam
+    volumes:
+      - ./bimmelbam:/var/www/html:cached
+      - ./html:/var/www/app:cached
+    ports:
+      - 10010:8080
     networks:
       - web
 

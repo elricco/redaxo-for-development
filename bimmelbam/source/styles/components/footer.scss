@@ -1,0 +1,18 @@
+.footer {
+  text-align: center;
+  font-size: 1rem;
+
+  p {
+    color: rgba(255, 255, 255, 0.6);
+  }
+
+  @include media-breakpoint-up(sm) {
+    position: fixed;
+    top: auto;
+    bottom: 2vh;
+    left: 0;
+    right: 0;
+    z-index: 100;
+    color: rgba(255, 255, 255, 0.6);
+  }
+}
